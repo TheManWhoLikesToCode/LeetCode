@@ -1,4 +1,5 @@
-public class finalValueAfterOperations {
+public class
+finalValueAfterOperations {
 
     public static void main(String[] args){
         String[] test = {"++X","++X","X++"};

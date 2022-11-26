@@ -1,55 +1,29 @@
 public class firstBadVersion {
 
     public static void main(String[] args) {
-        System.out.println(firstBadVersionX(214748364, 214748364));
+        System.out.println(firstBadVersion(214748364));
     }
 
-    public static int firstBadVersionX(int n, int target) {
+    public static int firstBadVersion(int n) {
+        int low = 0;
+        int mid = 0;
+        int high = n;
 
-        int left = 0;
-        int right = n;
-        int fourth = Math.floorDiv(n, 10);
-        int[] fourthArray = new int[9];
-
-        for (int i = 0; i < fourthArray.length; i++) {
-            fourthArray[i] =+ fourth;
-            if (isBadVersion(i, target)) {
-                right = i;
-                break;
-            }
-        }
-        
-        for (int i = 0; i < fourthArray.length; i++) {
-            if (!isBadVersion(i, target)) {
-                left = i;
-                break;
+        while (high >= low) {
+            // Why
+            mid = low+(high-low)/ 2;
+            if (isBadVersion(mid)) {
+                high = mid - 1;
+            }else{
+                low = mid + 1;
             }
         }
 
-        int ans = iterativeSolve(n, target, left, right);
-        return ans;
+        return low;
+
     }
 
-    private static int iterativeSolve(int n, int target, int startPoint, int endPoint) {
-
-        int ans = -1;
-
-        for (int i = startPoint; i < endPoint+1; i++) {
-            if (isBadVersion(i, target)) {
-                ans = i;
-                return i;
-            }
-        }
-
-        return ans;
-    }
-
-    private static boolean isBadVersion(int middle, int target) {
-
-        if (middle == target) {
-            return true;
-        }
-
+    private static boolean isBadVersion(int mid) {
         return false;
     }
 }
