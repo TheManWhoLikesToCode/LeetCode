@@ -10,7 +10,7 @@ public class shuffle {
     }
     public static int[] shuffle(int[] nums, int n) {
 
-        int temp[];
+        int[] temp;
         temp = Arrays.copyOf(nums, nums.length);
 
         // add odds
