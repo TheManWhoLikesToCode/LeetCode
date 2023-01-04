@@ -7,16 +7,16 @@ public class queue {
         queue q = new queue(4);
 
         // print Queue elements
-        q.queueDisplay();
+        queueDisplay();
 
         // inserting elements in the queue
-        q.queueEnqueue(1);
-        q.queueEnqueue(2);
-        q.queueEnqueue(3);
-        q.queueEnqueue(4);
-        q.queueDisplay();
-        q.queueDequeue();
-        q.queueDisplay();
+        queueEnqueue(1);
+        queueEnqueue(2);
+        queueEnqueue(3);
+        queueEnqueue(4);
+        queueDisplay();
+        queueDequeue();
+        queueDisplay();
 
 
     }
